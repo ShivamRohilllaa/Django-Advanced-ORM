@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<main class="container">
+    <div class="bg-light p-5 rounded">
+      <h1>Difference example</h1>
+      <br />
+      <table class="table table-primary table-striped">
+          <thead>
+              <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for i in diff1 %}
+            <tr>
+              <th scope="row">{{forloop.counter}})</th>
+              <td>{{i.title}}</td>
+              <td>{{i.status}}</td>
+            </tr>
+            {% endfor %} 
+          </tbody>
+        </table>
+      <br />
+      <table class="table table-secondary table-striped">
+          <thead>
+              <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for i in diff2 %}
+              <tr>
+                  <th scope="row">{{forloop.counter}})</th>
+                  <td>{{i.title}}</td>
+                  <td>{{i.status}}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+      <br />
+      <h1>Difference Queries Result</h1>
+      <br /> 
+      <table class="table table-success table-hover">
+          <thead>
+              <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for i in dq %}
+            <tr>
+              <th scope="row">{{forloop.counter}})</th>
+              <td>{{i.title}}</td>
+              <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>  
+    </div>
+  </main>
+{% endblock body %}
